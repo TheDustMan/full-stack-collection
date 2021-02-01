@@ -1,0 +1,6 @@
+[submodule "full-stack-frontend"]
+	path = full-stack-frontend
+	url = git@github.com:TheDustMan/full-stack-frontend
+[submodule "full-stack-backend"]
+	path = full-stack-backend
+	url = git@github.com:TheDustMan/full-stack-backend
