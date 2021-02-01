@@ -1,0 +1,25 @@
+services:
+  frontend:
+    build:
+      context: ./full-stack-frontend
+      dockerfile: Dockerfile.dev
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    volumes:
+      - ./full-stack-frontend/src:/app/src
+      - ./full-stack-frontend/public:/app/public
+    ports:
+      - 3000:3000
+  backend:
+    build:
+      context: ./full-stack-backend
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    volumes:
+      - ./full-stack-backend:/code
+    environment:
+      FLASK_ENV: development
+  redis:
+    image: "redis:alpine"
+  
